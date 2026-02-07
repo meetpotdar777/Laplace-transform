@@ -1,0 +1,53 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{booktabs}
+
+\title{Laplace Transform Reference Sheet}
+\author{Calculus Study Notes}
+\date{}
+
+\begin{document}
+
+\maketitle
+
+\section{The Definition}
+The Laplace transform of a function $f(t)$ is defined as:
+\[
+F(s) = \mathcal{L}\{f(t)\} = \int_{0}^{\infty} e^{-st} f(t) \, dt
+\]
+
+\section{Common Transform Pairs}
+Below are the transforms you'll use most often:
+
+\begin{center}
+\begin{tabular}{ll}
+\toprule
+\textbf{Time Domain} $f(t)$ & \textbf{s-Domain} $F(s)$ \\
+\midrule
+$1$ (Unit Step) & $\frac{1}{s}$ \\
+$t^n$ & $\frac{n!}{s^{n+1}}$ \\
+$e^{at}$ & $\frac{1}{s-a}$ \\
+$\sin(at)$ & $\frac{a}{s^2 + a^2}$ \\
+$\cos(at)$ & $\frac{s}{s^2 + a^2}$ \\
+\bottomrule
+\end{tabular}
+\end{center}
+
+\section{Important Properties}
+\begin{itemize}
+    \item \textbf{Linearity:} $\mathcal{L}\{af(t) + bg(t)\} = aF(s) + bG(s)$
+    \item \textbf{First Shifting Theorem:} $\mathcal{L}\{e^{at}f(t)\} = F(s-a)$
+    \item \textbf{Differentiation:} $\mathcal{L}\{f'(t)\} = sF(s) - f(0)$
+\end{itemize}
+
+% --- ADDED SECTION START ---
+\section{Further Reading}
+For a deeper dive into engineering mathematics, see \cite{kreyszig2011}.
+
+\bibliographystyle{plain}
+\bibliography{references}
+% --- ADDED SECTION END ---
+
+\end{document}
